@@ -5,8 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AgendaWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="Agenda DevMedia" Height="500" Width="525" WindowStartupLocation="CenterScreen">
+    <StackPanel Orientation="Vertical">
+        <GroupBox Header=" Busca de Contatos ">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox Content="Fonética" Grid.Column="0" VerticalAlignment="Center"/>
+                <StackPanel Orientation="Vertical" Grid.Column="1">
+                    <Label Content="Tipo"/>
+                    <ComboBox/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Column="2">
+                    <StackPanel Orientation="Vertical" Margin="3,0,3,0">
+                        <Label Content="Informe o nome a ser localizado"/>
+                        <TextBlock Width="200"/>
+                    </StackPanel>
+                    <Button Content="Localizar" Width="80" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <DataGrid Height="210">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Contato" Width="300"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <GroupBox Header="Telefones">
+            <DataGrid Height="100">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Tipo" Width="100"/>
+                    <DataGridTextColumn Header="Número" Width="150"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
+            <Button Content="Novo contato" Width="100"/>
+            <Button Content="Editar" Width="100"/>
+            <Button Content="Excluir" Width="100"/>
+        </StackPanel>
+    </StackPanel>
 </Window>
